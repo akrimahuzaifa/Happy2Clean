@@ -9,7 +9,7 @@ import Quote from './pages/Quote';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/Happy2Clean">
       <ScrollToTop />
       <Layout>
         <Routes>
