@@ -6,6 +6,7 @@ import Services from './pages/Services';
 import Pricing from './pages/Pricing';
 import ServiceAreas from './pages/ServiceAreas';
 import Quote from './pages/Quote';
+import Gallery from './pages/Gallery';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/service-areas" element={<ServiceAreas />} />
+          <Route path="/gallery" element={<Gallery />} />
           <Route path="/quote" element={<Quote />} />
         </Routes>
       </Layout>

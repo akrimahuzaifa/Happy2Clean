@@ -24,6 +24,7 @@ export default function Header() {
     { to: '/services', label: 'Services' },
     { to: '/pricing', label: 'Pricing' },
     { to: '/service-areas', label: 'Service Areas' },
+    { to: '/gallery', label: 'Gallery' },
   ];
 
   return (

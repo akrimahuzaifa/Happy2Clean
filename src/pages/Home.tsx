@@ -343,6 +343,160 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 bg-teal-100 text-teal-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+              <Sparkles className="w-4 h-4" />
+              Before & After Gallery
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              See the Happy2Clean Transformation
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+              Real results from real clients—see how we turn cluttered spaces into sparkling clean homes
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            {[
+              {
+                title: 'Living Room Deep Clean',
+                category: 'Residential Deep Clean',
+                image: 'https://images.pexels.com/photos/3587968/pexels-photo-3587968.jpeg?auto=compress&cs=tinysrgb&w=600',
+              },
+              {
+                title: 'Kitchen Transformation',
+                category: 'Kitchen Cleaning',
+                image: 'https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&w=600',
+              },
+              {
+                title: 'Bathroom Refresh',
+                category: 'Bathroom Cleaning',
+                image: 'https://images.pexels.com/photos/2121122/pexels-photo-2121122.jpeg?auto=compress&cs=tinysrgb&w=600',
+              },
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="group rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 bg-white border-2 border-gray-200 hover:border-teal-500"
+              >
+                <div className="relative overflow-hidden bg-gray-200 h-64">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
+                  <p className="text-sm text-teal-600 font-semibold">{item.category}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Link
+              to="/gallery"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-teal-600 to-teal-500 text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+            >
+              View Full Gallery
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 bg-teal-100 text-teal-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+              <Star className="w-4 h-4" />
+              What Our Clients Say
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Trusted by Hundreds of Happy Families
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              See why Metro Vancouver homeowners choose Happy2Clean for their cleaning needs
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                name: 'Sarah Mitchell',
+                location: 'Vancouver',
+                rating: 5,
+                text: 'The team from Happy2Clean transformed our home! I love that they use eco-friendly products, and my kids can play on the floors without worry. Best decision ever!',
+                service: 'Bi-weekly Cleaning',
+              },
+              {
+                name: 'James Chen',
+                location: 'North Vancouver',
+                rating: 5,
+                text: 'Professional, punctual, and thorough. The same team comes every week, so they know exactly what we like. This is what attention to detail looks like.',
+                service: 'Weekly Cleaning',
+              },
+              {
+                name: 'Maria Rodriguez',
+                location: 'Burnaby',
+                rating: 5,
+                text: 'After our renovations, Happy2Clean did a post-construction cleanup that was absolutely incredible. Every detail was perfect. Highly recommend!',
+                service: 'Post-Construction Cleaning',
+              },
+              {
+                name: 'David Thompson',
+                location: 'Coquitlam',
+                rating: 5,
+                text: 'As someone with pet allergies, the high-filtration vacuums make a huge difference. My home feels healthier and looks cleaner than ever.',
+                service: 'Recurring Cleaning',
+              },
+              {
+                name: 'Lisa Wong',
+                location: 'West Vancouver',
+                rating: 5,
+                text: 'Great communication, fair pricing, and they really care about doing quality work. No hidden fees, just honest, excellent service.',
+                service: 'Monthly Cleaning',
+              },
+              {
+                name: 'Robert Mackenzie',
+                location: 'New Westminster',
+                rating: 5,
+                text: 'We used them for our move-out cleaning and they ensured we got our full deposit back. Attention to detail is incredible!',
+                service: 'Move-Out Cleaning',
+              },
+            ].map((testimonial, index) => (
+              <div
+                key={index}
+                className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-gray-200"
+              >
+                <div className="flex items-center justify-between mb-4">
+                  <div>
+                    <h3 className="text-lg font-bold text-gray-900">{testimonial.name}</h3>
+                    <p className="text-sm text-gray-600">{testimonial.location}</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+
+                <p className="text-gray-700 mb-4 leading-relaxed italic">"{testimonial.text}"</p>
+
+                <div className="pt-4 border-t border-gray-200">
+                  <span className="text-xs font-semibold text-teal-600 bg-teal-50 px-3 py-1 rounded-full">
+                    {testimonial.service}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="py-20 bg-gray-900 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Sparkles className="w-16 h-16 text-teal-400 mx-auto mb-6" />
